@@ -1,0 +1,54 @@
+<main>
+  <div class="container my-5 vh-100 d-flex gap-3">
+    <div class="vw-100">
+      <h1 class="text-center">Productos</h1>
+      <div class="text-center">Nombre - id</div>
+      <ol id="productList" class="text-center">
+        {{#each products}}
+        <li>{{this.title}} - {{this.productId}}</li>
+        {{/each}}
+      </ol>
+    </div>
+    <div class="vw-100">
+      <form id="agregarProducto" class="text-center">
+        <div class="mb-3">
+          <label for="title" class="form-label">Name</label>
+          <input type="text" class="form-control" name="title" id="title" required>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" name="description" class="form-control" id="description">
+        </div>
+        <div class="mb-3">
+          <label for="code" class="form-label">Code</label>
+          <input type="text" name="code" class="form-control" id="code" required>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" name="price" class="form-control" id="price" required>
+        </div>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock</label>
+          <input type="number" name="stock" class="form-control" id="stock" required>
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <input type="text" name="category" class="form-control" id="category" required>
+        </div>
+        <button type="reset" class="btn btn-primary bg-info border border-black">Limpiar</button>
+        <button type="submit" class="btn btn-primary bg-success border border-black rounded-pill">Agregar Producto</button>
+      </form>
+      <form class="mt-3 text-center" id="deleteProduct">
+        <div class="mb-3">
+          <label for="deleteById" class="form-label">Ingrese Numero de Id</label>
+          <input type="number" class="form-control" name="deleteById" id="deleteById">
+        </div>
+        <button type="reset" class="btn btn-primary bg-info border border-black">Limpiar</button>
+        <button type="submit" class="btn btn-primary bg-danger border border-black rounded-pill">Eliminar Producto</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script src="socket.io/socket.io.js"></script>
+<script src="assets/scripts/home.js"></script>

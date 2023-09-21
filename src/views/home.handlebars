@@ -1,0 +1,9 @@
+<div class="container mb-3">
+  <h1>Productos</h1>
+  <div>Nombre - id</div>
+  <ol>
+    {{#each products}}
+    <li>{{this.title}} - {{this.id}}</li>
+    {{/each}}
+  </ol>
+</div>
